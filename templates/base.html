@@ -4,8 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="This is a website for garden beginers about plants for small gardens.">
-    <link rel="shortcut icon" href="{% static 'favicon.ico' %}" type="image/x-icon">
-    <link rel="manifest" href="site.webmanifest">
+    <link rel="shortcut icon" href="static/favicon/favicon-32x32.png" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" type="text/css">
@@ -20,20 +19,20 @@
         <!--top navbar-->  
         <nav class="nav-extended  teal darken-4 white-text sticky-top">
             <div class="nav-wrapper">
-                <a href="{{ url_for('index') }}" class="brand-logo"><img src="/static/img/logo_48.png"  class="logo"alt ="Plantarium logo"><span class="mobile-view logo-text">Plantarium</span></a>
+                <a href="{{ url_for('index') }}" class="brand-logo"><img src="/static/img/Logo_48x48.png"  class="logo"alt ="Backyard Plants logo"><span class="mobile-view logo-text">Backyard Plants</span></a>
                 <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="fas fa-bars"></i></a>
             <ul class="right hide-on-med-and-down">
                 <li><a href="{{ url_for('index') }}">Home</a></li>
-                <li><a href="{{ url_for('all_plants') }}">All Plants</a></li>
-                <li><a href="{{ url_for('add_plant') }}">Add Your Plant </a></li>
+                <li><a href="">All Plants</a></li>
+                <li><a href="">Add Your Plant </a></li>
             </ul>
             </div>
         </nav>
         <!--side navbar-->
         <ul class="sidenav  teal darken-4 center " id="mobile-demo">
             <li><a href="{{ url_for('index') }}" class="white-text side-nav-style" >Home</a></li>
-            <li><a href="{{ url_for('all_plants') }}" class="white-text"> All Plants</a></li>
-            <li><a href="{{ url_for('add_plant') }}" class="white-text">Add Your Plant</a></li>
+            <li><a href="" class="white-text"> All Plants</a></li>
+            <li><a href="" class="white-text">Add Your Plant</a></li>
             
         </ul>
           

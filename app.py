@@ -1,6 +1,6 @@
 import os
 from flask import (
-    Flask,render_template,
+    Flask, render_template,
     redirect, request, url_for)
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
@@ -22,10 +22,11 @@ mongo = PyMongo(app)
 route for home page
 """
 
+
 @app.route("/")
+@app.route("/index")
 def index():
-    plants = mongo.db.plants.find()
-    return render_template("index.html", page_title="Home", plants=plants)
+    return render_template("index.html", page_title="Home")
 
 
 if __name__ == "__main__":
