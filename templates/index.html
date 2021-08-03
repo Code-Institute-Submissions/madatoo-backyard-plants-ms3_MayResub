@@ -1,22 +1,25 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Backyard Plants</title>
-</head>
-<body>
-    <h1>plants </h1>
-    {% for plant in plants %}<br>
-        {{ plant.plant_category }}<br>
-        {{ plant.plant_name }}<br>
-        {{ plant.plant_description }}<br>
-        {{ plant.plant_place }}<br>
-        {{ plant.plant_flower_time }}<br>
-        {{ plant.plant_tips }}<br>
-        {{ plant.plant_notes }}<br>
-        {{ plant.plant_img }}<br>
-    {% endfor %}
-</body>
-</html>
+{% extends "base.html" %}
+{% block content %}
+
+<!--carousel with flower images-->
+<!-- I followed by instuctions from https://www.jquery-az.com-->
+
+<div class="carousel carousel-slider carousel-container" id="carousel-auto" data-indicators="true">
+    <a class="carousel-item place-image" href="#one!"><img src="/static/img/colorful-roses-w-brandt-unsplash.jpg" alt="Colorful roses W Brandt Unsplash" ></a>
+    <a class="carousel-item place-image" href="#two!"><img src="/static/img/glaucomas-colorful-z-schaeffer-unsplash.jpg" alt= "Glaucomas colorful Z Schaeffer Unsplash" ></a>
+    <a class="carousel-item place-image" href="#three!"><img src="/static/img/yellow-lilies-a-schimmeck-unsplash.jpg" alt="Yellow-lilies-A-Schimmeck-Unsplash"></a>
+</div>
+
+<div class="container">
+    <h1>Backyard Plants what it is and for whom?</h1>
+    <p>This page is created for all gardening amateurs. Here you can read about plants which are the best for small gardens. If some informations will be interesting for you we provide a more interesting content with links to dive in :) This page is intuitive for everyone. You can easly browse interesting plants. You also can add some new plants to the our list, edit this list and delate not essential content as well.  </p>
+
+    <h2>How it's works?</h2>
+    <p>The  All Plant page includes a database with plants images, names, desctriptions, tips and additional links. Dive in to find your favourite plants in our base for sunny, partial-sunny, partial-shade or shade place! </p><br>
+    <p>Add Plant page allows you to add your favourite plants to our database. Feel free and create this database with us:) </p>
+
+</div>
+
+
+
+{% endblock%}
