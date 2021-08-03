@@ -1,104 +1,67 @@
 ![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
 
-Welcome USER_NAME,
+# The backyard plants
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. The last update to this file was: **July 2, 2021**
+To visit the live website, click [here]( https://..........herokuapp.com)
 
-## Gitpod Reminders
+![my page](https://madatoo.github.io/backyard-plants/static/img/..................)
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+# Introduction
 
-`python3 -m http.server`
+This is my third project for Code Institute. I am really glad that I got to work on it because it gave me an opportunity to show my passions, which are gardening and storing information about plants - the flowers, shrubs, and other plants I alredy have in my own backyard and those I would like to have in the future. This is why I decided to create a plants database for small gardens.
 
-A blue button should appear to click: _Make Public_,
+# User Experience (UX)
 
-Another blue button should appear to click: _Open Browser_.
+This was probably the hardest part of my project. To make this project useful for visitors, I needed to create an ideal visitor's profile.
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+I assumed that this person would:
 
-A blue button should appear to click: _Make Public_,
+ - love gardening,
+ - live in their own or rented house with a small garden or have a few plant pots on the balcony.
+ - she/his is between 20-50 years old
+ - she/his has little to intermediate experience in gardening
+ - she/his wants to read a little about plants before they decide to buy them
+ - she/his would like to take care of the plants in a natural way (without chemical fertilisers)
 
-Another blue button should appear to click: _Open Browser_.
+## First time Visitor's needs:
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+- they would like to know what the page is about, this means that the main topic is described clearly 
+- easy and intuitive navigation throughout the webpage (divided into proper sections)
+- to find plant descriptions, their needs, photos and some advice on how to take care of them
+- know where to find important information for them (navigation bar and supporting descriptions on the page) 
 
-To log into the Heroku toolbelt CLI:
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+## Returning visitors are very often interested in:
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
+- reading more interesting descriptions of plants
+- sharing saved descriptions and pictures with others users
+- adding their own advice about taking care of the plants
+- adding pictures and descriptions of plants they alredy have
+- adding pictures and descriptions of plants they would like to have in the future
+- sorting the plants by place (Sun/Shade etc.)
+- editing saved plants
+- adding pictures from own gardens to inspire others  
 
-------
+# Design
 
-## Release History
+## Global 
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+## Color Scheme
 
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
+The webpage has a white background and the pages and plants headings on the page have dark green color, so that they correspond nicely with the white background. All paragraphs are written in black to give a good contrast and give people a chance to read content easily. The navigation bar, footer and buttons on the page have the same dark green background to keep consistent design. White text is added to incerease the users experience. 
 
-**July 2 2021:** Remove extensions that are not available in Open VSX.
 
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
+## Typography
 
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
+## Imagery
 
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
+Imagery is very important for this page, and is used throughout the website, so that it's visually appealing. It helps visitors remember flowers and easily identify them.
 
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
+## Wireframes
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
+- [Home](https://madatoo.github.io/backyard-plants-ms3/static/wireframes/Home.png)
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
+- [Search](https://madatoo.github.io/backyard-plants-ms3/static/wireframes/Search.png)
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
+- [Add_Plant](https://madatoo.github.io/backyard-plants-ms3/static/wireframes/Add_Plant.png)
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
-
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
-
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
-
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
-
-------
-
-## FAQ about the uptime script
-
-**Why have you added this script?**
-
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
-
-**How will this affect me?**
-
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
-
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
-
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
-
-**So….?**
-
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
-
-**Can I opt out?**
-
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
-
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
-
-**Anything more?**
-
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
-
----
-
-Happy coding!
