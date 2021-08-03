@@ -1,0 +1,126 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v7.0.29,
+* Autoprefixer: v9.7.6
+* Browsers: last 4 version
+*/
+
+
+/*----------------general rules*/
+
+html{
+    position:relative;
+}
+
+html,
+body{
+    min-height: 100vh; 
+}
+body {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+}
+
+main {
+    -webkit-box-flex: 1;
+        -ms-flex: 1 0 auto;
+            flex: 1 0 auto;
+}
+
+h1,
+h2{
+    font-size: 2.92rem;
+    color: #004d40;
+}
+/*------------------------------base*/
+
+/*------------sticky footer*/
+footer{
+    position: absolute;
+    bottom:0;
+    left:0;
+    width: 100%;
+    text-align: center;
+}
+
+h6{
+    color:#fff;
+}
+
+.last-section{
+    margin-bottom: 120px;
+}
+/*------------------------navbar*/
+.logo{
+    border-radius: 50%;
+    margin-top: 4px;
+    margin-left:1em;;
+}
+
+.logo-text{
+    padding-left: 10px;
+}
+
+.side-nav-style{
+    margin-top: 52px;
+    
+}
+
+/*-----------------sticky navbar*/
+.sticky-top {
+    position: fixed;
+    top: 0;
+    left:0;
+    z-index: 1020;
+    width: 100%;
+}
+
+/*--------------------------------home page*/
+/*----------------carousel*/
+.carousel-container{
+    height: 450px;
+}
+
+.place-image {
+    height: 500px; 
+    width: 500px; 
+    -o-object-fit:cover; 
+       object-fit:cover;
+}
+
+/*----------------------------------all plants page*/
+.custom-all-plants-header{
+    margin-top:84px;
+    text-align: center;
+    
+}
+
+
+.green-text{
+    *color: #004d40 ;
+    font-weight: 400;
+    text-transform: capitalize;
+    /*font-style: italic;*/
+}
+/*----------------------------------add palant page*/
+
+.plant-place-button{
+    margin-left: 40%;
+    margin-right: 40%;
+}
+.space{
+    margin: 2em;
+}
+
+/*----------------------------------media queries*/
+ @media screen and (max-width: 620px){
+     .mobile-view{
+         display:none;
+    }
+
+}
