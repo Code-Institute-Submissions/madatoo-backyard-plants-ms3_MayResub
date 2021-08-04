@@ -1,6 +1,6 @@
 import os
 from flask import (
-    Flask, render_template,
+    Flask, flash, render_template,
     redirect, request, url_for)
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
@@ -37,13 +37,10 @@ route to add plant page
 @app.route("/add_plant", methods=["GET", "POST"])
 def add_plant():
     if request.method == "POST":
-        wish_list = "on" if request.form.get(
-            "plant_on_wish_list") else "no"
         plant = {
             "category_name": request.form.get("category_name"),
             "plant_name": request.form.get("plant_name"),
             "plant_img": request.form.get("plant_img"),
-            "plant_on_wish_list": wish_list,
             "plant_description": request.form.get("plant_description"),
             "plant_place": request.form.getlist("plant_place"),
             "plant_tips": request.form.get("plant_tips"),
@@ -58,6 +55,17 @@ def add_plant():
     places = mongo.db.places.find().sort("plant_places", 1)
     return render_template(
         "add_plant.html", categories=categories, places=places)
+
+
+"""return all plants from database"""
+
+
+@app.route('/all_plants')
+def all_plants():
+
+    plants = mongo.db.plants.find()
+
+    return render_template('all_plants.html', plants=plants)
 
 
 if __name__ == "__main__":
