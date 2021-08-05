@@ -62,10 +62,12 @@ def add_plant():
 
 @app.route('/all_plants')
 def all_plants():
-
+    categories = mongo.db.categories.find().sort('Category_name', 1)
     plants = mongo.db.plants.find()
+    places = mongo.db.places.find().sort('plant_place', 1)
 
-    return render_template('all_plants.html', plants=plants)
+    return render_template(
+        'all_plants.html', categories=categories, plants=plants, places=places)
 
 
 if __name__ == "__main__":

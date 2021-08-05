@@ -1,6 +1,24 @@
 {% extends "base.html" %}
 {% block content %}
 
-
+<div class="container">
+    <!--header-->
+    <div class="row s12 m6 l4 text-center custom-all-plants-header">
+        <h1>All Plants</h1>
+        <p>Here you can browse our databse and read about some plants.</p>
+    </div>    
+    <!--search form allows browse the database by name, description or plant place-->
+    <div class="row s12 m6 l6 text-center search-box">
+        <form action="" method="get">
+            <div class="input-field inline">
+                <input id="input-field" type="text" class="validate">
+                <span class="helper-text text-color" >Enter your searching criteria.</span>
+              </div>
+        </form>
+    </div>
+</div>
+<div class="container">
+    
+</div>
 
 {% endblock %}

@@ -3,7 +3,7 @@
 
 <div class="container">
     <!--header-->
-    <div class="row s12 m7 l6 text-center custom-all-plants-header">
+    <div class="row s12 m7 text-center custom-all-plants-header">
         <h1>Add Your Plant</h1>
     </div>
     <!--add plant form-->
@@ -31,8 +31,7 @@
             <!--plant_name-->
             <div class="row">
                 <div class="input-field col s12">
-                    <input class="validate" id="plant_name" name="plant_name" type="text"
-                    minlength="3" maxlength="60" required>
+                    <input class="validate" id="plant_name" name="plant_name" type="text" minlength="3" maxlength="60" required>
                     <label for="plant_name">Plant Name</label>
                     <span class="helper-text" data-error="Please enter correct name." data-success="Correct Name.">Enter plant name between 3 and 60 characters</span>
                 </div>
@@ -42,22 +41,21 @@
                 <div class="input-field col s12">
                     <input id="plant_description" class="validate" type="text" name="plant_description"  minlength="3" data-length="2500" required ></input>
                     <label for="plant_description">Plant Description</label>
-                    <span class="helper-text" data-error="Please enter plant description." data-success="Correct Name.">Enter plant description.</span>
+                    <span class="helper-text" data-error="Please enter plant description." data-success="Correct description.">Enter plant description.</span>
                 </div>
             </div>
             <!--plant_place sun/shade etc.-->
-            <div class="row center">
-                <div class="row row s12 m7 text-center">
-                    <select id="plant_place" class="validate" name="plant_place" required>
-                        <option value="" disabled selected>
-                            Choose Plant Place
-                        </option>
-                        {% for place in places %}
-                            <option value="{{ place.plant_place }}">
-                                {{ place.plant_place }}</option>
-                        {% endfor %}
-                    </select>
-                    <label for="plant_place">Plant Place</label>              
+            <div class="row">
+                <select id="plant_place" class="validate" name="plant_place" required>
+                    <option value="" disabled selected>
+                        Choose Plant Place
+                    </option>
+                    {% for place in places %}
+                        <option value="{{ place.plant_place }}">
+                        {{ place.plant_place }}</option>
+                    {% endfor %}
+                </select>
+                <label for="plant_place">Plant Place</label>              
                 </div>
             </div>
             <!--plant_tips-->
@@ -82,9 +80,8 @@
                 </button>
                 <a class="btn waves-effect waves-light space teal darken-4" href="{{ url_for('index') }}">Return <i class="fas fa-home"></i></a>
             </div>
-            
-
         </form>
     </div>
 </div>
+
 {% endblock%}
