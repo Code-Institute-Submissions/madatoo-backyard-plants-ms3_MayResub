@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block content %}
+
+<!--search form allows browse the database by name, description or plant place-->
+<div class="row s12 m6 l6 text-center search-box">
+    <form action="" method="get">
+        <div class="input-field inline">
+            <input id="search_option" name="search_option" type="text" class="validate">
+            <span class="helper-text text-color" >Enter your searching criteria.</span>
+            <button class="btn waves-effect waves-light teal darken-4 " type="submit" >Search <i class="fas fa-search"></i>
+            </button>
+        </div>
+    </form>
+</div>
+</div>
+
+{% endblock %}

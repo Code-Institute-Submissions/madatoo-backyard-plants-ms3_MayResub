@@ -62,12 +62,62 @@ def add_plant():
 
 @app.route('/all_plants')
 def all_plants():
-    categories = mongo.db.categories.find().sort('Category_name', 1)
-    plants = mongo.db.plants.find()
+    categories = mongo.db.categories.find().sort('category_name', 1)
+    plants = list(mongo.db.plants.find())
     places = mongo.db.places.find().sort('plant_place', 1)
 
     return render_template(
         'all_plants.html', categories=categories, plants=plants, places=places)
+
+
+"""
+This route is for edit plant
+old data will be replaced by new
+"""
+
+
+@app.route("/edit_plant/<plant_id>", methods=["GET", "POST"])
+def edit_plant(plant_id):
+    if request.method == "POST":
+        submit = {
+            "category_name": request.form.get("category_name"),
+            "plant_name": request.form.get("plant_name"),
+            "plant_img": request.form.get("plant_img"),
+            "plant_description": request.form.get("plant_description"),
+            "plant_place": request.form.getlist("plant_place"),
+            "plant_tips": request.form.get("plant_tips"),
+            "plant_more_info": request.form.get("plant_more_info"),
+            "plant_notes": request.form.getlist("plant_notes")
+        }
+
+        mongo.db.plants.update({"_id": ObjectId(plant_id)}, submit)
+        flash("Plant Successfully Updated.")
+    plant = mongo.db.plants.find_one({"_id": ObjectId(plant_id)})
+
+    categories = mongo.db.categories.find().sort("category_name", 1)
+    places = mongo.db.places.find().sort("plant_places", 1)
+    return render_template(
+        "edit_plant.html", categories=categories, plant=plant, places=places)
+
+
+"""
+This is route to delete a single plant from database
+"""
+
+
+@app.route("/delete_plant/<plant_id>")
+def delete_plant(plant_id):
+    mongo.db.plant.remove({"_id": ObjectId(plant_id)})
+    flash("Plant Successfully Removed.")
+    return redirect(url_for("index"))
+
+
+@app.route('/search_plant/<plant_id>')
+def search_plant(plant_id):
+    places = mongo.db.places.find()
+    categories = mongo.db.categories.find_one('category_name', 1)
+
+    return render_template("search_plant.html", categories=categories, places=places)
 
 
 if __name__ == "__main__":

@@ -11,14 +11,40 @@
     <div class="row s12 m6 l6 text-center search-box">
         <form action="" method="get">
             <div class="input-field inline">
-                <input id="input-field" type="text" class="validate">
+                <input id="search_option" name="search_option" type="text" class="validate">
                 <span class="helper-text text-color" >Enter your searching criteria.</span>
-              </div>
+                <button class="btn waves-effect waves-light teal darken-4 " type="submit" >Search <i class="fas fa-search"></i>
+                </button>
+            </div>
         </form>
     </div>
 </div>
 <div class="container">
-    
+    <div class="row s12 m7">
+        {% for plant in plants %}
+            <div class="col s12 m7 text-center">
+                <a href="">
+                    <div class="card-image bg-image">
+                        {% if plant.plant_img %}
+                            <img src="" alt="">
+                        {% else %}
+                            <img src="{{ url_for('static', filename='img/logo.png')}}" alt="logo image">
+                        {% endif %}
+                    </div>
+                    <div class="card horizontal">
+                        <div class="card-content text-center">
+                            <span class="card-title"><strong><h4>{{ plant.plant_name }}</h4></strong></span>
+                            <span class="green-text"><span> Category: {{ plant.plant_category }}</span><br>
+                            <span class="green-text"><strong>Description</strong></span>
+                            <p>{{ plant.plant_description }}</p>
+                            <span class="green-text "><strong>Tips</strong></span>
+                            <p>{{ plant.plant_tips }}</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        {% endfor %}
+    </div>    
 </div>
 
 {% endblock %}
