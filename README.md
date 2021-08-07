@@ -16,12 +16,12 @@ This was probably the hardest part of my project. To make this project useful fo
 
 I assumed that this person would:
 
- - love gardening,
- - live in their own or rented house with a small garden or have a few plant pots on the balcony.
- - she/his is between 20-50 years old
- - she/his has little to intermediate experience in gardening
- - she/his wants to read a little about plants before they decide to buy them
- - she/his would like to take care of the plants in a natural way (without chemical fertilisers)
+- love gardening,
+- live in their own or rented house with a small garden or have a few plant pots on the balcony.
+- she/his is between 20-50 years old
+- she/his has little to intermediate experience in gardening
+- she/his wants to read a little about plants before they decide to buy them
+- she/his would like to take care of the plants in a natural way (without chemical fertilisers)
 
 ## First time Visitor's needs:
 
@@ -57,11 +57,11 @@ Imagery is very important for this page, and is used throughout the website, so 
 
 ## Wireframes
 
-- ![Home](https://madatoo.github.io/backyard-plants-ms3/static/wireframes/Home.png)
+- ![Home](wireframes/Home.png)
 
-- ![Search](https://madatoo.github.io/backyard-plants-ms3/static/wireframes/Search.png)
+- ![Search](wireframes/Search.png)
 
-- ![Add_Plant](https://madatoo.github.io/backyard-plants-ms3/static/wireframes/Add_Plant.png)
+- ![Add_Plant](wireframes/Add_Plant.png)
 
 # Features
 
@@ -95,15 +95,15 @@ The most important thing in this project was designing the application which mee
 - MongoDB to store created data inside backyard plants database
 - Flask for developing web application 
 - jQuery - to initialize Materialize CSS components.
-- Randomkeygen - used for generate the random secret key for database
-- Google Fonts - used for fonts on website
-- Font Awesome - used for Icons.
+- Randomkeygen - used for generate the random secret key for database.
+- Google Fonts - used for fonts on website.
+- Font Awesome - used for Icons on page.
 - Materialize CSS - Used for elements, components and styling of the page.
-- Balsamic - to creates of the Wireframes.
+- Balsamic - to create of the Wireframes.
 - Freelogodesign - for design logo for this project.
 - Favicon - for convert the logo into favicons.
-- GitHub - Used for hosting the code, and version control.
-- Notion - for project management
+- GitHub - used for hosting the code, and version control.
+- Notion - for project management.
 - MS Excel - for storing prepared data for database.
 - MS Word - for language validation (English isn't my first language).
  
@@ -122,7 +122,7 @@ In this project FAQ wasn't implemented yet, but some information about page func
 
 ### Returning Visitors
 
-Most of teir needs is implemented, but not all. I didn't add a login and register function in this project (that will be done in future). This decision, bring me a lot od problems :). And didn't allow to create own (user) database. For now, this app allows each users add /edit and delate each plant in this database - and that is, because I didn’t create an admin or super-user. 
+Most of their needs is implemented, but not all. I didn't add a login and register function in this project (that will be done in future). This decision, bring me a lot od problems :). And didn't allow to create own (user) database. For now, this app allows each users add /edit and delate each plant in this database - and that is, because I didn’t create an admin account. That decision didn't allow me create an wish list collection for each user as well.
 
 ### Known bugs add challenges 
 
@@ -136,7 +136,7 @@ I had a lot of trouble with adding images into the database. To solve this issue
 
 I don’t have a lot of experience yet, but in the future, I would like to create a much more advanced page, where users will be able to create their own profiles and where they will have the opportunity to save their favourite plants in at least two different collections (one for plants they have already and for the plants they want to add to their wish list).  
 
-I would like to add the same features to add/edit and delete plant - for users in their own plant’s collections, and to share with others saved favourite plants tips /comments and other sources by this app. 
+I would like to add the same features to add/edit and delete plant - for users in their own plant’s collections, and to share with others saved favourite plants tips, comments,other sources, saved plant/garden images to inspire and support other users as well. 
 
 I would like to add the contact form and social media links and create the sign up form where users can register to the app by sign in by Google Account, Facebook or Instagram by one clik. 
 
