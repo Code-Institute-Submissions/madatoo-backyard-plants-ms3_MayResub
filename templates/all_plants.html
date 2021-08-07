@@ -9,7 +9,7 @@
     </div>    
     <!--search form allows browse the database by name, description or plant place-->
     <div class="row s12 m6 l6 text-center search-box">
-        <form action="" method="get">
+        <form action="{{ url_for('search_plant') }}" method="get">
             <div class="input-field inline">
                 <input id="search_option" name="search_option" type="text" class="validate">
                 <span class="helper-text text-color" >Enter your searching criteria.</span>
@@ -26,7 +26,7 @@
                 <a href="">
                     <div class="card-image bg-image">
                         {% if plant.plant_img %}
-                            <img src="" alt="">
+                            <img src="{{  plant.plant_img }}" alt="{{ plant.plant_name }}">
                         {% else %}
                             <img src="{{ url_for('static', filename='img/logo.png')}}" alt="logo image">
                         {% endif %}

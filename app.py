@@ -50,7 +50,7 @@ def add_plant():
 
         mongo.db.plants.insert_one(plant)
         flash("Plant Successfully Added.")
-        return redirect(url_for("index"))
+        return redirect(url_for("display_plant"))
     categories = mongo.db.categories.find().sort("category_name", 1)
     places = mongo.db.places.find().sort("plant_places", 1)
     return render_template(
@@ -65,7 +65,6 @@ def all_plants():
     categories = mongo.db.categories.find().sort('category_name', 1)
     plants = list(mongo.db.plants.find())
     places = mongo.db.places.find().sort('plant_place', 1)
-
     return render_template(
         'all_plants.html', categories=categories, plants=plants, places=places)
 
@@ -84,14 +83,15 @@ def edit_plant(plant_id):
             "plant_name": request.form.get("plant_name"),
             "plant_img": request.form.get("plant_img"),
             "plant_description": request.form.get("plant_description"),
-            "plant_place": request.form.getlist("plant_place"),
+            "plant_place": request.form.get("plant_place"),
             "plant_tips": request.form.get("plant_tips"),
             "plant_more_info": request.form.get("plant_more_info"),
-            "plant_notes": request.form.getlist("plant_notes")
+            "plant_notes": request.form.get("plant_notes")
         }
 
         mongo.db.plants.update({"_id": ObjectId(plant_id)}, submit)
         flash("Plant Successfully Updated.")
+
     plant = mongo.db.plants.find_one({"_id": ObjectId(plant_id)})
 
     categories = mongo.db.categories.find().sort("category_name", 1)
@@ -112,12 +112,23 @@ def delete_plant(plant_id):
     return redirect(url_for("index"))
 
 
-@app.route('/search_plant/<plant_id>')
-def search_plant(plant_id):
-    places = mongo.db.places.find()
-    categories = mongo.db.categories.find_one('category_name', 1)
+@app.route('/search_plant', methods=['GET','POST'])
+def search_plant():
+    search_option = request.form.get('search_option')
+    plants = mongo.db.plants.find({'$text':{'$search_plant':search_option}})
 
-    return render_template("search_plant.html", categories=categories, places=places)
+    return render_template(
+        "search_plant.html", plants=plants)
+
+
+@app.route('/search_plant/<category_name>')
+def search_plant_by_category(category_name):
+    search_option = request.form.get('search_option')
+    categories = mongo.db.categories.find_one('category_name', 1)
+    plants = mongo.db.plants.find()
+
+    return render_template(
+        "search_plant.html", plants=plants, categories=categories)
 
 
 if __name__ == "__main__":
