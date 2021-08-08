@@ -29,9 +29,28 @@ def index():
     return render_template("index.html", page_title="Home")
 
 
+"""route to all plants in database
 """
-route to add plant page
-"""
+
+
+@app.route('/all_plants')
+def all_plants():
+    plants = mongo.db.plants.find().sort('_id', 1)
+
+    return render_template('all_plants.html', plants=plants)
+
+
+# @app.route('/search_plant/<plant_place>')
+# def search_plant(plant_place):
+#    plants = mongo.db.plants.find()
+#    places = mongo.db.places.find()
+#    return render_template(
+#        'all_plants.html', plants=plants,
+#        places=places,
+#       page_title=places + " Plants")
+
+
+"""Route to add plant page"""
 
 
 @app.route("/add_plant", methods=["GET", "POST"])
@@ -42,35 +61,22 @@ def add_plant():
             "plant_name": request.form.get("plant_name"),
             "plant_img": request.form.get("plant_img"),
             "plant_description": request.form.get("plant_description"),
-            "plant_place": request.form.getlist("plant_place"),
+            "plant_place": request.form.get("plant_place"),
             "plant_tips": request.form.get("plant_tips"),
             "plant_more_info": request.form.get("plant_more_info"),
-            "plant_notes": request.form.getlist("plant_notes")
+            "plant_notes": request.form.get("plant_notes")
         }
 
         mongo.db.plants.insert_one(plant)
         flash("Plant Successfully Added.")
-        return redirect(url_for("display_plant"))
+        return redirect(url_for("index"))
     categories = mongo.db.categories.find().sort("category_name", 1)
     places = mongo.db.places.find().sort("plant_places", 1)
     return render_template(
         "add_plant.html", categories=categories, places=places)
 
 
-"""return all plants from database"""
-
-
-@app.route('/all_plants')
-def all_plants():
-    categories = mongo.db.categories.find().sort('category_name', 1)
-    plants = list(mongo.db.plants.find())
-    places = mongo.db.places.find().sort('plant_place', 1)
-    return render_template(
-        'all_plants.html', categories=categories, plants=plants, places=places)
-
-
-"""
-This route is for edit plant
+""" This route is for edit plant
 old data will be replaced by new
 """
 
@@ -112,23 +118,13 @@ def delete_plant(plant_id):
     return redirect(url_for("index"))
 
 
-@app.route('/search_plant', methods=['GET','POST'])
-def search_plant():
-    search_option = request.form.get('search_option')
-    plants = mongo.db.plants.find({'$text':{'$search_plant':search_option}})
-
-    return render_template(
-        "search_plant.html", plants=plants)
+# error page 404
 
 
-@app.route('/search_plant/<category_name>')
-def search_plant_by_category(category_name):
-    search_option = request.form.get('search_option')
-    categories = mongo.db.categories.find_one('category_name', 1)
-    plants = mongo.db.plants.find()
+@app.errorhandler(404)
+def page_not_found(error):
 
-    return render_template(
-        "search_plant.html", plants=plants, categories=categories)
+    return render_template("404.html")
 
 
 if __name__ == "__main__":

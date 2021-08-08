@@ -56,12 +56,17 @@ The webpage has a white background and the pages and plants headings on the page
 Imagery is very important for this page, and is used throughout the website, so that it's visually appealing. It helps visitors remember flowers and easily identify them.
 
 ## Wireframes
+1. Home page
 
-- ![Home](wireframes/Home.png)
+![View](wireframes/Home.png)
 
-- ![Search](wireframes/Search.png)
+2. All Plants
 
-- ![Add_Plant](wireframes/Add_Plant.png)
+![View](wireframes/Search.png)
+
+3. Add Plant
+
+![View](wireframes/Add_Plant.png)
 
 # Features
 
