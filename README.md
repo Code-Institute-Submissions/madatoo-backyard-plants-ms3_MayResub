@@ -76,11 +76,13 @@ This page provides basic information about the main purpose of this page and abo
 
 ## Plants page
 
-Here are all plants added to plantarium database. To browse them you need to choose one from available options and then select the category that will be displayed as the result. 
+Here are all plants added to backyard-plants database. To browse them you need to choose one from available options and after select the category results will be displayed below the searching box. That is probably the most important page in whole app. Here I had a lot of troubles to create a good page. I needed add few divs each of them was designed to specific tasks such as header, div with search box and last one with results displayed after searching. 
+It was challenging for me. Especially the part with searching. I understand, what I wanted to achived, but I had challange to implement my solutions.
+
 
 ## Add plant page
 
-That is probably the most important page in the whole project. Here you can add to plantarium database your plants. That part was the most frustraiting and challenging for me. Especially the part with plant pictures, plant type and plant place. I needed to understand it very well to implement needed features.
+That page is created for adding plants to database. That part was the most frustraiting and challenging for me. Especially the part with plant pictures, plant type and plant place. I needed to understand it very well to implement needed features.
 
 ### CRUD 
 
@@ -90,6 +92,30 @@ The most important thing in this project was designing the application which mee
 2. Read - to implement this part All Plants page was created to allow visitors make a choice beetween the available categories which will display when they decide which one, they want to browse.
 3. Update - from All Plants page visitors can go and read more about a specific plant and edit all information about the plant.
 4. Delete - simlarly to what's above, visitors can remove data about a specific plant using All Plants page.
+
+### Database
+
+This database has few collections. 
+
+| collection name  | collection fielsd  | sample |
+| :------------ |:---------------| :-----|
+| plants      | _id | _objectID(number) |
+|      | plant_category        |   Flowers|
+|  |plant_img         | url for image |
+|  | plant_name        |   Tulip |
+|  | plant_description | short info about plant | 
+|  | plant_flower_time   | when plant has flowers  (Summer)|
+|  | plant_tips        | advise how to have better plant |
+|  | plant_notes | additional info or links |
+| places    | _id   | ObjectId  |
+|   | plant_place | Sun/ Partial-Sun |
+| categories  | _id  | ObjectId |
+|    | category_name | Flowers/ Shrubs/Climbers |
+| flowering_time | _id  | ObjectId |
+|    | flower_time | Spring /Summer |
+
+I wanted search plants by specific category for example by place  and diplay all plants suitable for this place. 
+
 
 # Technologies Used
 
@@ -123,11 +149,11 @@ In this project FAQ wasn't implemented yet, but some information about page func
 - main purpose of the webpage is described on the Home page below the carusel,
 - how to add plants - each field in Add Plant form is described or intuitive.
 - how to browse plants - that is posibble on All Plants page. Here visitors can browse plants afrter choosing some categoty. 
-- edit and delete - those features are available from the All-Plants page. When user choose the category from search field and hit the serch button, then results of his chooise will be displayed. next she/he needs press button in particular plant to see more info. in that view user see the one plant and all available info about this plant and has two buttons to update the plant or return to home page. 
+- edit and delete - those features are available from the All-Plants page. When user choose the category from search field and hit the serch button, then results of his chooise will be displayed. Next she/he needs press button in particular plant to see more info. In that view user see the one plant and all available info about this plant and has two buttons to update the plant or return to home page. 
 
 ### Returning Visitors
 
-Most of their needs is implemented, but not all. I didn't add a login and register function in this project (that will be done in future). This decision, bring me a lot od problems :). And didn't allow to create own (user) database. For now, this app allows each users add /edit and delate each plant in this database - and that is, because I didn’t create an admin account. That decision didn't allow me create an wish list collection for each user as well.
+Most of their needs is implemented, but not all. I didn't add a login and register function in this project (that will be done in future). This decision, bring me a lot problems :). And didn't allow to create own (user) database. For now, this app allows each users add /edit and delate each plant in this database - and that is, because I didn’t create an admin account. That decision didn't allow me create an wish list collection for each user as well.
 
 ### Known bugs add challenges 
 

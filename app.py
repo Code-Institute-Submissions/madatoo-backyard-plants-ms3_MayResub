@@ -33,21 +33,12 @@ def index():
 """
 
 
-@app.route('/all_plants')
+@app.route('/all_plants/<search_option>)')
 def all_plants():
-    plants = mongo.db.plants.find().sort('_id', 1)
+    plants = mongo.db.plants.find()
 
-    return render_template('all_plants.html', plants=plants)
-
-
-# @app.route('/search_plant/<plant_place>')
-# def search_plant(plant_place):
-#    plants = mongo.db.plants.find()
-#    places = mongo.db.places.find()
-#    return render_template(
-#        'all_plants.html', plants=plants,
-#        places=places,
-#       page_title=places + " Plants")
+    return render_template(
+        'all_plants.html', plants=plants, search_option=search_option)
 
 
 """Route to add plant page"""
@@ -118,7 +109,7 @@ def delete_plant(plant_id):
     return redirect(url_for("index"))
 
 
-# error page 404
+"""error page 404"""
 
 
 @app.errorhandler(404)
