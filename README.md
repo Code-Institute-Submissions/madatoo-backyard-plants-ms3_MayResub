@@ -2,9 +2,9 @@
 
 # The backyard plants
 
-To visit the live website, click [here]( https://..........herokuapp.com)
+To visit the live website, click [here]( https://backyard-plants-magda.herokuapp.com/)
 
-![my page](https://madatoo.github.io/backyard-plants/static/img/..................)
+![my page](https://madatoo.github.io/backyard-plants/static/img/responsive.PNG)
 
 # Introduction
 

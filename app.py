@@ -124,8 +124,8 @@ def delete_plant(plant_id):
 
 @app.route('/search_plant', methods=["GET", "POST"])
 def search_plant():
-    query = request.form.get('search_option')
-    plants = mongo.db.plants.find({'$text': {'$search': query}})
+    search_option = request.form.get('search_option')
+    plants = mongo.db.plants.find({'$text': {'$search': search_option}})
 
     return render_template('search_plant.html', plants=plants)
 
