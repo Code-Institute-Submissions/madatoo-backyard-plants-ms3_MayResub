@@ -33,12 +33,22 @@ def index():
 """
 
 
-@app.route('/all_plants/<search_option>)')
+@app.route('/all_plants')
 def all_plants():
     plants = mongo.db.plants.find()
 
     return render_template(
-        'all_plants.html', plants=plants, search_option=search_option)
+        'all_plants.html', plants=plants)
+
+
+"""route to display plant"""
+
+
+@app.route('/display_plant/<plant_id>')
+def display_plant(plant_id):
+    plant = mongo.db.plants.find_one_or_404(
+        {"_id":ObjectId(plant_id)})
+    return render_template('display_plant.html', plant=plant)
 
 
 """Route to add plant page"""
@@ -68,7 +78,7 @@ def add_plant():
 
 
 """ This route is for edit plant
-old data will be replaced by new
+old data will be updated by new
 """
 
 

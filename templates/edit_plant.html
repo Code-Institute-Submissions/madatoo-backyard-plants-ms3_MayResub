@@ -8,11 +8,11 @@
     </div>
     <!--add plant form-->
     <div class="row">
-        <form class="col s12" method="POST" action="{{ url_for('edit_plant') }}">
+        <form class="col s12" method="POST" action="{{ url_for('edit_plant', plant_id=plant._id) }}">
             <!--category_name-->
             <div class="row">
                 <select id="category_name" class="validate" name="category_name" required>
-                    <option value="{{ url_for('search_plant') }}" disabled selected>Choose Plant Category</option>
+                    <option value="" disabled selected>Choose Plant Category</option>
                     {% for category in categories %}
                         <option value="{{ category.category_name }}">
                             {{ category.category_name }}</option>
@@ -76,8 +76,7 @@
             </div>
             <!--submit btn-->
             <div class="row center">
-                <button class="btn waves-effect waves-light teal darken-4 " type="submit" >Update Plant <i class="fas fa-pen-alt"></i>
-                </button>
+                <button type="submit" class="btn waves-effect waves-light teal darken-4 " >Update Plant <i class="fas fa-pen-alt"></i></button>
                 <a class="btn waves-effect waves-light space teal darken-4" href="{{ url_for('index') }}">Return to Home <i class="fas fa-home"></i></a>
             </div>
         </form>
