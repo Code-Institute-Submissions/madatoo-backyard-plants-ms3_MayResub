@@ -7,20 +7,27 @@
         <h1>All Plants</h1>
         <p>Here you can browse our databse and read about some plants.</p>
     </div>    
-    <!--search form allows browse the database by name, description or plant place-->
-    <div class="row s12 m6 l6 text-center search-box">
+    <!--search form allows browse the database by name or description-->
+    <div class="row s12 m6 l4 text-center search-box">
         <form action="{{ url_for('search_plant') }}" method="POST">
             <div class="input-field inline">
-                <input id="search_option" name="search_option" type="text" class="validate">
+                <input id="search_option" name="search_option" type="text" class="validate" required>
                 <span class="helper-text text-color" >Enter your searching criteria.</span>
                 <button class="btn waves-effect waves-light teal darken-4 " type="submit" >Search <i class="fas fa-search"></i>
                 </button>
             </div>
         </form>
     </div>
-</div>
+
+<!--here are displayed all search results for the entered critria by user-->
+
+
+
+
+
+</div> <!--end div container-->
 <div class="container">
-    <div class="row s12 m7">
+    <div class="row s12 m8">
         {% for plant in plants %}
             <div class="col s12 m7 text-center">
                 <a href="{{ url_for ('display_plant', plant_id=plant._id) }}">
