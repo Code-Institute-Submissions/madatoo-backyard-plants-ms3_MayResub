@@ -142,7 +142,7 @@ h6{
 }
 .green-text{
     font-weight: 400;
-    text-transform: capitalize;
+    /*text-transform: capitalize;*/
 }
 
 .green-text-name{
