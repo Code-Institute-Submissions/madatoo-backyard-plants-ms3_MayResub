@@ -3,7 +3,7 @@
 
 <!--search form allows browse the database by name, description or plant place-->
 <div class="row s12 m6 l6 text-center search-box">
-    <form action="" method="post">
+    <form action="{{ url_for('search_plant') }}" method="post">
         <div class="input-field inline">
             <input id="search_option" name="search_option" type="text" class="validate">
             <span class="helper-text text-color" >Enter your searching criteria.</span>
@@ -11,6 +11,38 @@
             </button>
         </div>
     </form>
+</div>
+<!-- display search plant for selected category -->
+<div class="container">
+    <div class="row s12 m6">
+        {% for plant in plants %}
+            {% if plant.plant_category == search_option %}
+            <div class="card mb-2">
+                <div class="row">
+                    <div class="col m3">
+                        <a href="{{ url_for ('display_plant', plant_id=plant._id) }}">
+                            <div class="card-image bg-image">
+                                {% if plant.plant_img %}
+                                    <img src="{{ plant.plant_img }}" alt="{{ plant.plant_name }}">
+                                {% else %}
+                                    <img src="{{ url_for('static', filename='img/logo.png')}}" alt="logo image">
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col m9">
+                        <div class="card-content text-center">
+                            <span class="card-title"><strong><h4>{{ plant.plant_name }}</h4></strong></span>
+                            <span class="green-text"><span> Category: {{ plant.plant_category }}</span><br>
+                            <span class="green-text"><strong>Description</strong></span>
+                            <p>{{ plant.plant_description }}</p>
+                            <a href="{{ url_for ('display_plant', plant_id=plant._id )}}"><button class="btn waves-effect waves-light teal darken-4 " type="submit" >Read More <i class="fas fa-book-open"></i></a>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        {% endfor %}
+    </div>    
 </div>
 
 

@@ -47,7 +47,7 @@ def all_plants():
 @app.route('/display_plant/<plant_id>')
 def display_plant(plant_id):
     plant = mongo.db.plants.find_one_or_404(
-        {"_id":ObjectId(plant_id)})
+        {"_id": ObjectId(plant_id)})
     return render_template('display_plant.html', plant=plant)
 
 
@@ -117,6 +117,17 @@ def delete_plant(plant_id):
     mongo.db.plant.remove({"_id": ObjectId(plant_id)})
     flash("Plant Successfully Removed.")
     return redirect(url_for("index"))
+
+
+"""route to search plants by name or description"""
+
+
+@app.route('/search_plant', methods=["GET", "POST"])
+def search_plant():
+    query = request.form.get('search_option')
+    plants = mongo.db.plants.find({'$text': {'$search': query}})
+
+    return render_template('search_plant.html', plants=plants)
 
 
 """error page 404"""
