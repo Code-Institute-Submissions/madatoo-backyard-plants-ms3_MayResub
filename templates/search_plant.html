@@ -9,16 +9,15 @@
             <span class="helper-text text-color" >Enter your searching criteria.</span>
             <button class="btn waves-effect waves-light teal darken-4 " type="submit" >Search <i class="fas fa-search"></i>
             </button>
-
         </div>
     </form>
 </div>
 <!-- display search plant for selected category -->
-    {% if plant|length >0 %}
-        <div class="container">
+    {% if plants.count() >0 %}
+        <div class="container ">
             <div class="row s12 m6">
             {% for plant in plants %}
-                <div class="card mb-2">
+                <div class="card  mb-2">
                     <div class="row">
                         <div class="col m3">
                         <a href="{{ url_for ('display_plant', plant_id=plant._id) }}">

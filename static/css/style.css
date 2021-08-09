@@ -133,6 +133,11 @@ h6{
     /*font-style: italic;*/
 }
 
+.green-text-name{
+    color: #004d40;
+    font-style: italic;
+}
+
 .bg-image{
     color: #004d40;
     height: 250px;
