@@ -1,8 +1,15 @@
 {% extends "base.html" %}
 {% block content %}
 
-<!--search form allows browse the database by name or description -->
-<div class="row s12 m6 l6 text-center search-box">
+<div class="container">
+    <!--header-->
+    <div class="row s12 m6 l4 text-center custom-all-plants-header">
+        <h1>Search Plants</h1>
+        <p>Here you can see yours searching results.</p>
+    </div>
+
+    <!--search form allows browse the database by name or description -->
+    <div class="row s12 m6 l6 text-center search-box">
     <form action="{{ url_for('search_plant') }}" method="post">
         <div class="input-field inline">
             <input id="search_option" name="search_option" type="text" class="validate" required>
@@ -11,41 +18,41 @@
             </button>
         </div>
     </form>
-</div>
-<!-- display search plant for selected category -->
-    {% if plants.count() >0 %}
-        <div class="container ">
-            <div class="row s12 m6">
-            {% for plant in plants %}
-                <div class="card  mb-2">
-                    <div class="row">
-                        <div class="col m3">
-                        <a href="{{ url_for ('display_plant', plant_id=plant._id) }}">
+    </div>
+    
+    <!-- here are displayed serching results for selected category-->
+    <div class="row-card s12 m7 ">
+        {% if plants.count() >0 %}
+            <div class="col s12 m7 text-center">
+                {% for plant in plants %}
+                    <a href="{{ url_for ('display_plant', plant_id=plant._id) }}">
+                        <div class="card horizontal card-panel hoverable">
                             <div class="card-image bg-image">
-                                {% if plant.plant_img %}
-                                    <img src="{{ plant.plant_img }}" alt="{{ plant.plant_name }}">
-                                {% else %}
-                                    <img src="{{ url_for('static', filename='img/logo.png')}}" alt="logo image">
-                                {% endif %}
+                            {% if plant.plant_img %}
+                                <img src="{{ plant.plant_img }}" alt="{{ plant.plant_name }}">
+                            {% else %}
+                                <img src="{{ url_for('static', filename='img/logo.png')}}" alt="logo image">
+                            {% endif %}
                             </div>
-                        <!--/div>
-                    </div-->
-                        <div class="col m9">
+                            <div class="card-stacked">
                             <div class="card-content text-center">
-                                <span class="card-title"><strong>{{ plant.plant_name }}</strong></span>
-                                <span class="green-text"><span> Category: {{ plant.plant_category }}</span><br>
+                                <span class="card-title green-text"><strong class="green-text-name">{{ plant.plant_name }}</strong></span>
+                                <span class="green-text"><span > Category: {{ plant.plant_category }}</span><br>
                                 <span class="green-text"><strong>Description</strong></span>
                                 <p>{{ plant.plant_description }}</p>
-                                <a href="{{ url_for ('display_plant', plant_id=plant._id )}}"><button class="btn waves-effect waves-light teal darken-4 " type="submit" >Read More <i class="fas fa-book-open"></i></a>
+                                <button class="btn waves-effect waves-light teal darken-4 card-button" type="submit" >Read More <i class="fas fa-book-open"></i>
+                                </button>
                             </div>
-                        </div>
-                        </a>
-                    </div>
-            {% endfor %}
-        </div>
+                            </div>
+                        </div>   
+                    </a>
+                {% endfor %}
+            </div>
+        {% else %}
+            <div class="row s12 m6 l4 text-center custom-all-plants-header">
+                <h3>No results found.</h3>
+            </div>
+        {% endif %}
     </div>
-    {% else %}
-        <h3>No results found.</h3>
-    {% endif %}
 
 {% endblock %}

@@ -34,6 +34,7 @@ main {
 
 h1,
 h2,
+h3,
 h4{
     color: #004d40;
 
@@ -176,6 +177,14 @@ h6{
 .space{
     margin: 2em;
 }
+
+/*---------------------------------search page*/
+
+input:-internal-autofill-selected {
+    background-color:#fff !important;
+}
+
+
 
 /*----------------------------------media queries*/
  @media screen and (max-width: 620px){
