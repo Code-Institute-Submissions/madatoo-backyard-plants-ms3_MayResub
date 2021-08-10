@@ -6,7 +6,6 @@
     <div class="row s12 m6 l4 text-center custom-all-plants-header">
         <h1>Edit Plant</h1>
         <p>Here you can add to our database your plant.</p>
-        <h1></h1>
     </div>
     <!--add plant form-->
     <div class="row">
@@ -41,7 +40,7 @@
             <!--plant_description-->
             <div class="row">
                 <div class="input-field col s12">
-                    <input id="plant_description" class="validate" type="text" name="plant_description"  minlength="3" data-length="2500" required ></input>
+                    <input id="plant_description" class="validate" type="text" name="plant_description"  minlength="3" data-length="2500" required >
                     <label for="plant_description">Plant Description</label>
                     <span class="helper-text" data-error="Please enter plant description." data-success="Correct description.">Enter plant description.</span>
                 </div>
@@ -58,7 +57,6 @@
                     {% endfor %}
                 </select>
                 <label for="plant_place">Plant Place</label>              
-                </div>
             </div>
             <!--plant_tips-->
             <div class="row">

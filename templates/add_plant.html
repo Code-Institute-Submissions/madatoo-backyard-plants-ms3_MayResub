@@ -1,5 +1,5 @@
-{%  extends "base.html"  %}
-{%  block content  %}
+{% extends "base.html" %}
+{% block content %}
 
 <div class="container">
     <!--header-->
@@ -53,7 +53,7 @@
                 <div class="input-field col s12">
                     <input id="plant_description" class="validate" 
                     type="text" name="plant_description"  
-                    minlength="3" data-length="2500" required ></input>
+                    minlength="3" data-length="2500" required >
                     <label for="plant_description">
                     Plant Description</label>
                     <span class="helper-text" 
@@ -74,33 +74,42 @@
                         {{place.plant_place}}</option>
                     {% endfor %}
                 </select>
-               <label for="plant_place">Plant Place</label>              
-                </div>
+                <label for="plant_place">Plant Place</label>              
+                <!--/div-->
             </div>
             <!--plant_tips-->
             <div class="row">
                 <div class="input-field col s12">
-                    <textarea id="plant_tips" class="materialize-textarea" name="plant_tips" data-length="2500" required ></textarea>
+                    <textarea id="plant_tips" class="materialize-textarea" 
+                    name="plant_tips" data-length="2500" required ></textarea>
                     <label for="plant_tips">Plant Tips</label>
-                    <span class="helper-text" data-error="Please enter your tips." data-success="Correct Name.">Here you can add some tips for this plant.</span>
+                    <span class="helper-text" data-success="Correct Name." 
+                    data-error="Please enter your tips." >
+                    Here you can add some tips for this plant.</span>
                 </div>
             </div>
             <!--plant_more_info-->
             <div class="row">
                 <div class="input-field col s12">
-                    <textarea id="plant_more_info" class="materialize-textarea" name="plant_more_info" data-length="1000"></textarea>
+                    <textarea id="plant_more_info" class="materialize-textarea" 
+                    name="plant_more_info" data-length="1000"></textarea>
                     <label for="plant_more_info">More Info About Plant </label>
-                    <span class="helper-text" data-error="Please enter your tips." data-success="Correct Name.">This space is for additional info and links.</span>
+                    <span class="helper-text" data-success="Correct Name." 
+                    data-error="Please enter your tips.">
+                    This space is for additional info and links.</span>
                 </div>
             </div>
             <!--submit btn-->
             <div class="row center">
-                <button class="btn waves-effect waves-light teal darken-4 " type="submit" >Submit <i class="fas fa-paper-plane"></i>
+                <button class="btn waves-effect waves-light teal darken-4" 
+                type="submit" >Submit <i class="fas fa-paper-plane"></i>
                 </button>
-                <a class="btn waves-effect waves-light space teal darken-4" href="{{ url_for('index') }}">Return <i class="fas fa-home"></i></a>
+                <a class="btn waves-effect waves-light space teal darken-4" 
+                href="{{ url_for('index') }}">Return <i class="fas fa-home">
+                </i></a>
             </div>
         </form>
     </div>
-<!--/div-->
+</div>
 
 {% endblock %}
