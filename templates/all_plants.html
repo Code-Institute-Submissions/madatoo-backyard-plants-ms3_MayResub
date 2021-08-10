@@ -11,9 +11,12 @@
     <div class="row s12 m6 l4 text-center search-box">
         <form action="{{ url_for('search_plant') }}" method="POST">
             <div class="input-field inline">
-                <input id="search_option" name="search_option" type="text" class="validate" required>
-                <span class="helper-text text-color" >Enter your searching criteria.</span>
-                <button class="btn waves-effect waves-light teal darken-4 " type="submit" >Search <i class="fas fa-search"></i>
+                <input id="search_option" name="search_option" type="text"
+                class="validate" required>
+                <span class="helper-text text-color" >
+                Enter your searching criteria.</span>
+                <button class="btn waves-effect waves-light teal darken-4 "
+                type="submit" >Search <i class="fas fa-search"></i>
                 </button>
             </div>
         </form>
@@ -27,18 +30,28 @@
                     <div class="card horizontal card-panel hoverable">
                         <div class="card-image bg-image">
                             {% if plant.plant_img %}
-                                <img src="{{ plant.plant_img }}" alt="{{ plant.plant_name }}">
+                                <img src="{{plant.plant_img}}"
+                                alt="{{plant.plant_name}}">
                             {% else %}
-                                <img src="{{ url_for('static', filename='img/logo.png')}}" alt="logo image">
+                                <img src="{{url_for(
+                                    'static', filename='img/logo.png')}}"
+                                    alt="logo image">
                             {% endif %}
                         </div>
                         <div class="card-stacked">
                             <div class="card-content text-center">
-                                <span class="card-title green-text"><strong class="green-text-name">{{ plant.plant_name }}</strong></span>
-                                <span class="green-text"><span > Category: {{ plant.plant_category }}</span><br>
-                                <span class="green-text"><strong>Description</strong></span>
-                                <p>{{ plant.plant_description }}</p>
-                                <button class="btn waves-effect waves-light teal darken-4 card-button" type="submit" >Read More <i class="fas fa-book-open"></i>
+                                <span class="card-title green-text">
+                                <strong class="green-text-name">
+                                {{plant.plant_name}}</strong></span>
+                                <span class="green-text"><span > 
+                                Category: {{plant.plant_category}}</span><br>
+                                <span class="green-text"><strong>
+                                Description</strong></span>
+                                <p>{{plant.plant_description}}</p>
+                                <button class="btn waves-effect teal 
+                                waves-light darken-4 card-button"
+                                type="submit">
+                                Read More <i class="fas fa-book-open"></i>
                                 </button>
                             </div>
                         </div>
