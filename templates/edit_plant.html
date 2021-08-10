@@ -32,7 +32,7 @@
             <!--plant_name-->
             <div class="row">
                 <div class="input-field col s12">
-                    <input class="validate" id="plant_name" name="plant_name" type="text" minlength="3" maxlength="60" required>
+                    <input class="validate" id="plant_name" name="plant_name" type="text" minlength="3" value="{{plant.plant_name}}" maxlength="60" required>
                     <label for="plant_name">Plant Name</label>
                     <span class="helper-text" data-error="Please enter correct name." data-success="Correct Name.">Enter plant name between 3 and 60 characters</span>
                 </div>
@@ -40,7 +40,7 @@
             <!--plant_description-->
             <div class="row">
                 <div class="input-field col s12">
-                    <input id="plant_description" class="validate" type="text" name="plant_description"  minlength="3" data-length="2500" required >
+                    <input id="plant_description" class="validate" type="text" name="plant_description"  minlength="3" data-length="2500" required value={{plant.plant_description}}>
                     <label for="plant_description">Plant Description</label>
                     <span class="helper-text" data-error="Please enter plant description." data-success="Correct description.">Enter plant description.</span>
                 </div>
@@ -52,7 +52,7 @@
                         Choose Plant Place
                     </option>
                     {% for place in places %}
-                        <option value="{{ place.plant_place }}">
+                        <option value="{{place.plant_place}}">
                         {{place.plant_place}}</option>
                     {% endfor %}
                 </select>
@@ -61,7 +61,7 @@
             <!--plant_tips-->
             <div class="row">
                 <div class="input-field col s12">
-                    <textarea id="plant_tips" class="materialize-textarea" name="plant_tips" data-length="2500" required ></textarea>
+                    <textarea id="plant_tips" class="materialize-textarea" name="plant_tips" data-length="2500" required value="{{plant.plant_tips}}"></textarea>
                     <label for="plant_tips">Plant Tips</label>
                     <span class="helper-text" data-error="Please enter your tips." data-success="Correct Name.">Here you can add some tips for this plant.</span>
                 </div>
@@ -69,7 +69,7 @@
             <!--plant_more_info-->
             <div class="row">
                 <div class="input-field col s12">
-                    <textarea id="plant_more_info" class="materialize-textarea" name="plant_more_info" data-length="1000"></textarea>
+                    <textarea id="plant_more_info" class="materialize-textarea" name="plant_more_info" data-length="1000" value="{{plant.plant_more_info}}"></textarea>
                     <label for="plant_more_info">More Info About Plant </label>
                     <span class="helper-text" data-error="Please enter additional info about the plant." data-success="Correct Name.">This space is for additional link. Please paste here valid link to additional information about this plant. </span>
                 </div>
