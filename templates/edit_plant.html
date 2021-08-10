@@ -25,7 +25,7 @@
             <div class="row">
                 <div class="input-field col s12">
                     <label for="plant_img">Plant Image</label>
-                    <input class="validate" id="plant_img" name="plant_img" type="url" pattern="https://.*" required >
+                    <input class="validate" id="plant_img" name="plant_img" type="url" pattern="https://.*" required value="{{plant.plant_img}}">
                 </div>
                 <span class="helper-text" data-error="Please enter correct name." data-success="Correct Name.">Please enter valid link to plant image.</span> 
             </div>
@@ -61,7 +61,7 @@
             <!--plant_tips-->
             <div class="row">
                 <div class="input-field col s12">
-                    <textarea id="plant_tips" class="materialize-textarea" name="plant_tips" data-length="2500" required value="{{plant.plant_tips}}"></textarea>
+                    <textarea id="plant_tips" class="materialize-textarea" name="plant_tips" data-length="2500" required >{{plant.plant_tips}}</textarea>
                     <label for="plant_tips">Plant Tips</label>
                     <span class="helper-text" data-error="Please enter your tips." data-success="Correct Name.">Here you can add some tips for this plant.</span>
                 </div>
@@ -69,7 +69,7 @@
             <!--plant_more_info-->
             <div class="row">
                 <div class="input-field col s12">
-                    <textarea id="plant_more_info" class="materialize-textarea" name="plant_more_info" data-length="1000" value="{{plant.plant_more_info}}"></textarea>
+                    <textarea id="plant_more_info" class="materialize-textarea" name="plant_more_info" data-length="1000" >{{plant.plant_more_info}}</textarea>
                     <label for="plant_more_info">More Info About Plant </label>
                     <span class="helper-text" data-error="Please enter additional info about the plant." data-success="Correct Name.">This space is for additional link. Please paste here valid link to additional information about this plant. </span>
                 </div>
