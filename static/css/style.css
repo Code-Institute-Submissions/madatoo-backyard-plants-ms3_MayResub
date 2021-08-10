@@ -16,6 +16,7 @@ html,
 body{
     min-height: 100vh; 
 }
+
 body {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -37,7 +38,6 @@ h2,
 h3,
 h4{
     color: #004d40;
-
 }
 
 h1,
@@ -48,6 +48,7 @@ h2{
 p{
     color:black;
 }
+
 /*---------------for helper text in forms */
 
 .input-field .helper-text {
@@ -60,6 +61,7 @@ p{
 /*----------------------------------base*/
 
 /*------------sticky footer*/
+
 footer{
     position: absolute;
     bottom:0;
@@ -75,7 +77,9 @@ h6{
 .last-section{
     margin-bottom: 120px;
 }
+
 /*------------------------navbar*/
+
 .logo{
     border-radius: 50%;
     margin-top: 4px;
@@ -87,11 +91,11 @@ h6{
 }
 
 .side-nav-style{
-    margin-top: 52px;
-    
+    margin-top: 52px;   
 }
 
 /*-----------------sticky navbar*/
+
 .sticky-top {
     position: fixed;
     top: 0;
@@ -102,6 +106,7 @@ h6{
 
 /*--------------------------------home page*/
 /*----------------carousel*/
+
 .carousel-container{
     height: 450px;
 }
@@ -114,6 +119,7 @@ h6{
 }
 
 /*----------------------------------all plants page*/
+
 .custom-all-plants-header,
 .search-box{
     text-align: center;
@@ -140,9 +146,9 @@ h6{
 .input-field .helper-text{
     color: #004d40 ;
 }
+
 .green-text{
     font-weight: 400;
-    /*text-transform: capitalize;*/
 }
 
 .green-text-name{
@@ -159,6 +165,7 @@ h6{
     margin-right: 0;
     margin-bottom: 20px;
 }
+
 .card-button{
     margin-top: 5vh;  
 }
@@ -183,8 +190,6 @@ h6{
 input:-internal-autofill-selected {
     background-color:#fff !important;
 }
-
-
 
 /*----------------------------------media queries*/
  @media screen and (max-width: 620px){
