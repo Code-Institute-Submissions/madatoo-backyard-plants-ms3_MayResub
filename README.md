@@ -4,7 +4,7 @@
 
 To visit the live website, click [here]( https://backyard-plants-magda.herokuapp.com/)
 
-![my page](https://madatoo.github.io/backyard-plants/static/img/responsive.PNG)
+![View](https://madatoo.github.io/backyard-plants/static/img/responsive.PNG)
 
 # Introduction
 
@@ -142,6 +142,8 @@ I wanted search plants by specific category for example by place  and diplay all
 
 ## User Stories testing
 
+
+
 ### First Time Visitor Goals
 
 In this project FAQ wasn't implemented yet, but some information about page functionallity was implemented. 
@@ -150,6 +152,8 @@ In this project FAQ wasn't implemented yet, but some information about page func
 - how to add plants - each field in Add Plant form is described or intuitive.
 - how to browse plants - that is posibble on All Plants page. Here visitors can browse plants afrter choosing some categoty. 
 - edit and delete - those features are available from the All-Plants page. When user choose the category from search field and hit the serch button, then results of his chooise will be displayed. Next she/he needs press button in particular plant to see more info. In that view user see the one plant and all available info about this plant and has two buttons to update the plant or return to home page. 
+
+And I am glad, because the all CRUD functionally working fine.
 
 ### Returning Visitors
 
@@ -161,9 +165,13 @@ I wanted to create an app that will allow users to add some info about their fav
 
 One of my biggest challenges in this project was understanding how the database works, and where I should write some conditions, to edit/display or delete some data.  
 
-I had a lot of trouble with adding images into the database. To solve this issue, I wanted to create a route to store my images (to do that I watched tutorials from Pretty Printed), then save them directly in the project (pictures for carousel and categories). I, also, added images to the imgbb.com, where I created an album, and in GitHub in different repositorium (lavender-iguana). Finally, I added the pictures using URL for GitHub repo.
+I had a lot of trouble with adding images into the database. To solve this issue, I wanted to create a route to store my images (to do that I watched tutorials from Pretty Printed), then save them directly in the project (pictures for carousel and categories). I, also, added images to the imgbb.com, where I created an album, and in GitHub in different repositorium (lavender-iguana). Finally, I added the pictures using URL for GitHub repo, but I didn't know that that need to be raw link (taken from my images repo but after download :) - this info I get from Igor from Code Institute. Now the images in my cards are visible. 
+
+I know about the issue with displaying text area (No textarea element found), that is because in my js file I do not have statement for #plant_description. That is the issu which I will implement in future.
 
 ### Left to implement:
+
+The main issue to solve in future is editing form, where I updated form to populate the currently plant to update it, but I sow an error, because the visitors need to input all data, instead editing the specific field.
 
 I don’t have a lot of experience yet, but in the future, I would like to create a much more advanced page, where users will be able to create their own profiles and where they will have the opportunity to save their favourite plants in at least two different collections (one for plants they have already and for the plants they want to add to their wish list).  
 
@@ -174,6 +182,7 @@ I would like to add the contact form and social media links and create the sign 
 I also want to add Privacy Policy and Terms of Use (for cookies). 
 
 I would like to add the admin panel where admin will has the all CRUD functionality to manage categories, plants or users collections.
+
 
 
 ### Links
